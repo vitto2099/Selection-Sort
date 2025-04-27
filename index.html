@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Visualizador de Selection Sort</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+  <h1>Selection Sort - Passo a Passo</h1>
+
+  <div id="inputArea">
+    <label for="arrayInput">Digite os valores do array (separados por vírgula):</label>
+    <input type="text" id="arrayInput" placeholder="Ex.: 64,34,5,11,90">
+    <button onclick="setArray()">Definir Array</button>
+  </div>
+
+  <div class="array-container" id="arrayContainer"></div>
+
+  <button onclick="sortStep()">Próximo Passo</button>
+  <button onclick="resetArray()">Resetar</button>
+
+  <div id="explanation"></div>
+
+  <h2>Código do Selection Sort:</h2>
+  <pre id="codeBlock">
+  my_array = [64, 34, 5, 11, 90]
+
+  n = len(my_array)
+  for i in range(n-1):
+      min_index = i
+      for j in range(i+1, n):
+          if my_array[j] < my_array[min_index]:
+              min_index = j
+      min_value = my_array.pop(min_index)
+      my_array.insert(i, min_value)
+  
+  print("Sorted array:", my_array)
+</pre>
+
+  <footer>
+    Equipe: Vitor Camargo Kunicki , Isabella Ruthes
+  </footer>
+</body>
+
+</html>
